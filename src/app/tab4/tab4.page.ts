@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-tab4',
+  templateUrl: 'tab4.page.html',
+  styleUrls: ['tab4.page.scss']
 })
-export class Tab3Page {
+export class Tab4Page {
 
   constructor(private media: Media) { }
 

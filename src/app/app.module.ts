@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
+import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 //copy from tab.page.ts
 
-//link to library
+//link to libraries
 //https://ionicframework.com/docs/v5/native/barcode-scanner
 //https://ionicframework.com/docs/v5/native/email-composer
+//https://ionicframework.com/docs/v5/native/media
 
 
 
@@ -23,7 +25,7 @@ import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     BarcodeScanner, 
     EmailComposer, 
-
+    Media,
 
 
     ],
@@ -31,3 +33,5 @@ import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+

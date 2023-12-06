@@ -1,0 +1,18 @@
+C:\PROG2005_A3_Part2\wk6app>ionic cordova plugin add cordova-plugin-media-capture
+> cordova.cmd plugin add cordova-plugin-media-capture
+Installing "cordova-plugin-media-capture" for android
+Installing "cordova-plugin-file" for android
+Subproject Path: CordovaLib
+Subproject Path: app
+
+The Android Persistent storage location now defaults to "Internal". Please check this plugin's README to see if your application needs any changes in its config.xml.
+
+If this is a new application no changes are required.
+
+If this is an update to an existing application that did not specify an "AndroidPersistentFileLocation" you may need to add:
+
+      "<preference name="AndroidPersistentFileLocation" value="Compatibility" />"
+
+to config.xml in order for the application to find previously stored files.
+
+Adding cordova-plugin-media-capture to package.json
