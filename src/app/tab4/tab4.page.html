@@ -7,12 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="beginRecord()">Record!</ion-button>
-
-  <br><br><br><br>
-
-  <ion-button (click)="playRecord()">Play!</ion-button>  
+  <ion-button (click)="getHeading()">Get Compass</ion-button>
   <div>
-    
+    <br>
+    <br>
+    Compass Value is: 
+    <br>
+    {{ compass }} 
   </div>
+
+  <ion-button (click)="subHeading()">sub Heading</ion-button>
+  <ion-button (click)="stopHeading()">Stop Heading</ion-button>
 </ion-content>

@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@awesome-cordova-plugins/device-orientation/ngx';
 //copy from tab.page.ts
 
 //link to libraries
 //https://ionicframework.com/docs/v5/native/barcode-scanner
 //https://ionicframework.com/docs/v5/native/email-composer
 //https://ionicframework.com/docs/v5/native/media
+//https://ionicframework.com/docs/v5/native/device-orientation
 
 
 
@@ -26,7 +28,7 @@ import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
     BarcodeScanner, 
     EmailComposer, 
     Media,
-
+    DeviceOrientation,
 
     ],
   //add the object type to the end NOTE THE BRACKETS

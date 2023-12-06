@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@awesome-cordova-plugins/device-orientation/ngx';
 
 @Component({
   selector: 'app-tab4',
@@ -7,33 +7,30 @@ import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
   styleUrls: ['tab4.page.scss']
 })
 export class Tab4Page {
+  constructor(private deviceOrientation: DeviceOrientation) { }
+  public compass : number = 0;
 
-  constructor(private media: Media) { }
+  getHeading() {
+    // Get the device current compass heading
+    this.deviceOrientation.getCurrentHeading().then(
+      (data: DeviceOrientationCompassHeading) => 
+      alert(data.magneticHeading),
+      //alert('good'),
+      (error: any) => alert('bad')
+    );
 
-  public resultMsg:string = '';
-
-  public beginRecord() {
-    var src = "/storage/emulated/0/Audio/recording.aac";
-    var file: MediaObject = this.media.create(src);
-
-    file.startRecord();
-    alert("recording");
+    //ask about magneticHeading?
   }
 
-  onSuccess() {
-    this.resultMsg = "Success";
+  subHeading() {
+    // // Watch the device compass heading change
+    // var subscription = this.deviceOrientation.watchHeading().subscribe(
+    //   (data: DeviceOrientationCompassHeading) => alert('data')
+    // );
   }
-
-  onFailure() {
-    this.resultMsg = "Failure";
+  
+  stopHeading() {
+    //Stop watching heading change
+    //subscription.unsubscribe();
   }
-
-  public playRecord() {
-    var src = "/storage/emulated/0/Audio/recording.aac";
-    var file: MediaObject = this.media.create(src);
-
-    file.play();
-    alert('playing');
-  }
-
 }

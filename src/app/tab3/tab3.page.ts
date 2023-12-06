@@ -10,29 +10,19 @@ export class Tab3Page {
 
   constructor(private media: Media) { }
 
+  public src = "/storage/emulated/0/Audio/recording.aac";
+  public file: MediaObject = this.media.create(this.src);
   public resultMsg:string = '';
 
   public beginRecord() {
-    var src = "/storage/emulated/0/Audio/recording.aac";
-    var file: MediaObject = this.media.create(src);
 
-    file.startRecord();
+    this.file.startRecord();
     alert("recording");
   }
 
-  onSuccess() {
-    this.resultMsg = "Success";
-  }
-
-  onFailure() {
-    this.resultMsg = "Failure";
-  }
-
   public playRecord() {
-    var src = "/storage/emulated/0/Audio/recording.aac";
-    var file: MediaObject = this.media.create(src);
 
-    file.play();
+    this.file.play();
     alert('playing');
   }
 
