@@ -9,21 +9,27 @@ import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 export class Tab3Page {
 
   constructor(private media: Media) { }
-
-  public src = "/storage/emulated/0/Audio/recording.aac";
-  public file: MediaObject = this.media.create(this.src);
+  public src = "recording.aac";
   public resultMsg:string = '';
+  public file: MediaObject = this.media.create(this.src);
+  public count: number = 0;
 
   public beginRecord() {
+    if (this.count = 0) {
+      this.file.startRecord();
+      this.count++;
+    } else {
+      alert("Only 1 recording allowed");
+    }
+  }
 
-    this.file.startRecord();
-    alert("recording");
+  public endRecord() {
+    this.file.stopRecord();
+    this.file.release();
   }
 
   public playRecord() {
-
     this.file.play();
-    alert('playing');
   }
 
 }

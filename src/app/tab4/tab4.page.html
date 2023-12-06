@@ -8,14 +8,18 @@
 
 <ion-content [fullscreen]="true">
   <ion-button (click)="getHeading()">Get Compass</ion-button>
+  <br>
+  <!-- <ion-button (click)="showLabel()">Get Label</ion-button> -->
   <div>
     <br>
     <br>
     Compass Value is: 
     <br>
+    {{ rawCompass }} 
+    <br>
     {{ compass }} 
+    <br>
+    {{ compassLabel }}
   </div>
 
-  <ion-button (click)="subHeading()">sub Heading</ion-button>
-  <ion-button (click)="stopHeading()">Stop Heading</ion-button>
 </ion-content>
