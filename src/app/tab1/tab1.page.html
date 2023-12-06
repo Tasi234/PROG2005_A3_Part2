@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Tab 1 - Scan Barcode
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,6 +9,10 @@
 <ion-content [fullscreen]="true">
   <ion-button (click)="scanBarcode()">Get Barcode</ion-button>
   <div>
+    <br>
+    <br>
+    Barcode Value is: 
+    <br>
     {{ barcodeResult }}    
   </div>
 </ion-content>

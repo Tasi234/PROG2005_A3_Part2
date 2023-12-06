@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 //copy from tab.page.ts
 
 //link to library
@@ -19,7 +20,13 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    BarcodeScanner, 
+    EmailComposer, 
+
+
+
+    ],
   //add the object type to the end NOTE THE BRACKETS
   bootstrap: [AppComponent],
 })
