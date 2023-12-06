@@ -30,24 +30,11 @@ export class Tab4Page {
     { "heading": "NNW", "small": 330, "large": 345 },
     { "heading": "N", "small": 345, "large": 360 }];
 
-  // getHeading() {
-    // Get the device current compass heading
-    // this.deviceOrientation.getCurrentHeading().then(
-    //   (data: DeviceOrientationCompassHeading) => 
-    //     alert(data.magneticHeading),
-    //   (error: any) => alert('error')
-    // );
-  // }
-
   getHeading() {
-    // // Watch the device compass heading change
     var subscription = this.deviceOrientation.watchHeading().subscribe(
       (data: DeviceOrientationCompassHeading) => 
         this.showLabel(data.magneticHeading),
-        //this.rawCompass = data.magneticHeading,
-        
       (error: any) => alert('error')
-
     );
   }
 
