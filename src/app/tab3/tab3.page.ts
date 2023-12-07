@@ -1,3 +1,5 @@
+//coding done by tasi unless otherwise commented
+
 import { Component } from '@angular/core';
 import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 
@@ -9,26 +11,23 @@ import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 export class Tab3Page {
 
   constructor(private media: Media) { }
+
   public src = "recording.aac";
   public resultMsg:string = '';
   public file: MediaObject = this.media.create(this.src);
-  public count: number = 0;
+  //variables
 
-  public beginRecord() {
-    if (this.count = 0) {
-      this.file.startRecord();
-      this.count++;
-    } else {
-      alert("Only 1 recording allowed");
-    }
+  beginRecord() {
+    this.file.startRecord();
   }
 
-  public endRecord() {
+  endRecord() {
     this.file.stopRecord();
     this.file.release();
+    //release the media instance
   }
 
-  public playRecord() {
+  playRecord() {
     this.file.play();
   }
 

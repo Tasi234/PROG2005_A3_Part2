@@ -1,0 +1,11 @@
+.center-container {
+  display: flex;
+  flex-direction: column; /* or row, depending on your needs */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set height to 100vh for full-page height */
+
+  /* Additional styling for the container if needed */
+  background-color: #f0f0f0;
+  padding: 20px;
+}

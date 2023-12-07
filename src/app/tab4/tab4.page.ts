@@ -1,3 +1,5 @@
+//coding done by tasi unless otherwise commented
+
 import { Component } from '@angular/core';
 import { DeviceOrientation, DeviceOrientationCompassHeading } from '@awesome-cordova-plugins/device-orientation/ngx';
 
@@ -8,8 +10,11 @@ import { DeviceOrientation, DeviceOrientationCompassHeading } from '@awesome-cor
 })
 export class Tab4Page {
   constructor(private deviceOrientation: DeviceOrientation) { }
+
   public compass : number = 0;
+  //rounded value
   public rawCompass : number = 0;
+  //raw value from sensor
   public compassLabel : string = '';
   public labels = [
     { "heading": "N", "small": 0, "large": 15 },
@@ -29,8 +34,10 @@ export class Tab4Page {
     { "heading": "NW", "small": 300, "large": 330 },
     { "heading": "NNW", "small": 330, "large": 345 },
     { "heading": "N", "small": 345, "large": 360 }];
+  //variables and array of labels and min/max degrees
 
   getHeading() {
+    //show a continuously updating variable
     var subscription = this.deviceOrientation.watchHeading().subscribe(
       (data: DeviceOrientationCompassHeading) => 
         this.showLabel(data.magneticHeading),
@@ -39,6 +46,7 @@ export class Tab4Page {
   }
 
   showLabel(input: number) {
+    //convert value to heading per array
     this.rawCompass = input;
     this.compass = Math.round(this.rawCompass);
 

@@ -1,18 +1,23 @@
+<!-- //coding done by tasi unless otherwise commented -->
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Tab 3 - Sound Recorder
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button (click)="beginRecord()">Record!</ion-button>
-  <br><br>
-  <ion-button (click)="endRecord()">Stop Recording!</ion-button>  
-  <br><br>
-  <ion-button (click)="playRecord()">Play!</ion-button> 
+<ion-content [fullscreen]="true" class="center-container">
   <div>
+    <ion-button (click)="beginRecord()">Record!</ion-button>
+  </div>
+
+  <div>
+    <ion-button (click)="endRecord()">Stop Recording!</ion-button>
+  </div>
     
+  <div>
+    <ion-button (click)="playRecord()">Play!</ion-button>
   </div>
 </ion-content>

@@ -1,3 +1,5 @@
+//coding done by tasi unless otherwise commented
+
 import { Component } from '@angular/core';
 import { OCR, OCRSourceType } from '@awesome-cordova-plugins/ocr/ngx';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
@@ -12,7 +14,13 @@ export class Tab5Page {
   constructor(private ocr: OCR, 
               private camera: Camera) { }
 
+  public rawImage:string = '';
+  //raw image value
+  public recognizedText:string = 'Default Text';
+  //default string
+
   startCamera() {
+    //starts camera, captures image and saves to device
     const options: CameraOptions = {
       quality: 50,
       destinationType: this.camera.DestinationType.FILE_URI,
@@ -22,24 +30,25 @@ export class Tab5Page {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-     this.readText(imageData)
+     this.rawImage = imageData //= this.readText(imageData)
+     //passes imageData (string value) to the ocr plugin
     }, (err) => {
-     // Handle error
+     alert('error')
     }); 
-
-
-  }
-  readText(imageData: string) {
-    this.ocr.recText(0, imageData).then((result: OCRResult) => 
-      this.onSuccess(result)
-      , (err) => 
-      this.onFail(err)
-    ); 
   }
 
-  onSuccess(recognizedText:OCRResult) {
-    alert(recognizedText);
-  }
+  //Error: Type 'OCRResult' is not assignable to type 'string'.   ** this.recognizedText = result **
+  //The documentation for the plugin says that the result of .recText is a string value, so idk how to troubleshoot this.
+
+  // readText() {
+  //   this.ocr.recText(0, this.rawImage).then((result) => 
+  //     this.recognizedText = result
+  //     , (err) => 
+  //     this.onFail(err)
+  //   ); 
+
+  //   alert(this.recognizedText);
+  // }
   
   onFail(message:string) {
     alert('Failed because: ' + message);

@@ -1,3 +1,5 @@
+<!-- //coding done by tasi unless otherwise commented -->
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -6,7 +8,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="app-tab2">
+    <div class="container">
   <ion-input [(ngModel)]="emailTo" label="To:" type="email" labelPlacement="stacked"></ion-input>
   <br>
   <ion-input [(ngModel)]="emailSubject" label="Subject:" labelPlacement="stacked"></ion-input>
@@ -17,7 +20,6 @@
   <ion-button (click)="sendEmail()">Send!</ion-button>
   <br>
   <br>
-  <div>
     Email Result:
     {{ emailResult }}    
   </div>

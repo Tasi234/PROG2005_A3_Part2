@@ -1,3 +1,5 @@
+//coding done by tasi unless otherwise commented
+
 import { Component } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 //import here
@@ -14,6 +16,7 @@ export class Tab1Page {
   constructor(private barcodeScanner: BarcodeScanner) { }
 
   scanBarcode() {
+    //start camera and read in barcode to plugin function
     this.barcodeScanner.scan().then(barcodeData => {
     this.barcodeResult = barcodeData.text;
     }).catch(err => {

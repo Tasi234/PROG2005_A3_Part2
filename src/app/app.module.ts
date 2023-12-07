@@ -34,7 +34,6 @@ import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
     DeviceOrientation,
     OCR,
     Camera,
-
     ],
   //add the object type to the end NOTE THE BRACKETS
   bootstrap: [AppComponent],
